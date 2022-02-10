@@ -1,10 +1,18 @@
 #!/bin/bash
-#==================================================================================================================================
-# Copyright (C) 2020- https://github.com/unifreq/openwrt_packit
+#========================================================================
+# This file is licensed under the terms of the GNU General Public
+# License version 2. This program is licensed "as is" without any
+# warranty of any kind, whether express or implied.
+#
+# This file is a part of the make OpenWrt for Amlogic s9xxx tv box
+# https://github.com/ophub/amlogic-s9xxx-openwrt
+#
+# Description: Create TF/SD/USB remaining space partition
+# Copyright (C) 2021- https://github.com/unifreq/openwrt_packit
 # Copyright (C) 2021- https://github.com/ophub/amlogic-s9xxx-openwrt
 #
-# Description: Create TF/USB remaining space partition
-#==================================================================================================================================
+# Command: openwrt-tf
+#========================================================================
 
 # Set font color
 blue_font_prefix="\033[94m"
@@ -109,9 +117,16 @@ mount -t ext4 "/dev/${PT_PRE}4" "/mnt/${PT_PRE}4"
 sync
 
 echo -e "${STEPS} Init the docker config ..."
+/etc/init.d/dockerd stop 2>/dev/null
+/etc/init.d/dockerd disable 2>/dev/null
 rm -rf "/opt/docker" 2>/dev/null && sync
 mkdir -p /mnt/${PT_PRE}4/docker && sync
 ln -sf "/mnt/${PT_PRE}4/docker/" "/opt/docker"
+sync
+if [ -f "/etc/config/dockerd" ]; then
+   uci set dockerd.@globals[0].data_root="/mnt/${PT_PRE}4/docker/"
+   uci commit dockerd
+fi
 cat >/etc/docker/daemon.json <<EOF
 {
   "bip": "172.31.0.1/24",
@@ -122,7 +137,6 @@ cat >/etc/docker/daemon.json <<EOF
      "max-size": "10m",
      "max-file": "5"
    },
-  "iptables": true,
   "registry-mirrors": [
      "https://docker.mirrors.ustc.edu.cn",
      "https://registry.cn-shanghai.aliyuncs.com",
@@ -131,8 +145,6 @@ cat >/etc/docker/daemon.json <<EOF
 }
 EOF
 sync
-/etc/init.d/dockerd stop 2>/dev/null
-/etc/init.d/dockerd disable 2>/dev/null
 /etc/init.d/dockerd start 2>/dev/null
 /etc/init.d/dockerd enable 2>/dev/null
 

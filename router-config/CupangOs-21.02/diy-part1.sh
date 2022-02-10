@@ -9,7 +9,8 @@
 # add feed for theme thano
 # sed -i '$a src-git system https://github.com/riyuejz/system.git;main' feeds.conf.default
 
-# Add a kenzok78 feed source
+# Add a cupangOs-packages feed source
+#sed -i '$a src-git small https://github.com/kenzok78/small-package' feeds.conf.default
 sed -i '$a src-git cupangOs_packages https://github.com/thecupangin/cupangOs-packages' feeds.conf.default
 
 # other

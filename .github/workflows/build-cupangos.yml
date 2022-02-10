@@ -20,7 +20,7 @@ env:
   CONFIG_FILE: router-config/CupangOs-21.02/.config
   DIY_P1_SH: router-config/CupangOs-21.02/diy-part1.sh
   DIY_P2_SH: router-config/CupangOs-21.02/diy-part2.sh
-  TZ: Asia/Jakarta
+  #TZ: Asia/Jakarta
 
 jobs:
   build:
@@ -40,7 +40,7 @@ jobs:
         sudo -E apt-get -qq install $(curl -fsSL git.io/ubuntu-2004-openwrt)
         sudo -E apt-get -qq autoremove --purge
         sudo -E apt-get -qq clean
-        sudo timedatectl set-timezone "$TZ"
+        sudo timedatectl set-timezone Asia/Jakarta
         sudo mkdir -p /workdir
         sudo chown $USER:$GROUPS /workdir
         echo "COMPILE_STARTINGTIME=$(date +"%Y.%m.%d.%H%M")" >> $GITHUB_ENV

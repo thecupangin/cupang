@@ -15,5 +15,5 @@ sed -i '$a src-git small https://github.com/kenzok78/small-package' feeds.conf.d
 
 # other
 rm -rf package/lean/{samba4,luci-app-samba4,*docker*}
-rm -rf package/{samba4,luci-app-samba4,*docker*}
+rm -rf package/{*samba4*,*docker*,*wol*,*timecontrol*,*weburl*}
 

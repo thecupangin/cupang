@@ -78,11 +78,11 @@ popd
 #popd
 
 # Add autocore
-# svn co https://github.com/ophub/amlogic-s9xxx-openwrt/trunk/amlogic-s9xxx/common-files/patches/autocore package/lean/autocore
+svn co https://github.com/thecupangin/cupang/trunk/amlogic-s9xxx/common-files/patches/autocore package/lean/autocore
 
 # coolsnowwolf default software package replaced with Lienol related software package
-# rm -rf feeds/packages/utils/{containerd,libnetwork,runc,tini}
-# svn co https://github.com/Lienol/openwrt-packages/trunk/utils/{containerd,libnetwork,runc,tini} feeds/packages/utils
+rm -rf feeds/packages/utils/{containerd,libnetwork,runc,tini}
+svn co https://github.com/Lienol/openwrt-packages/trunk/utils/{containerd,libnetwork,runc,tini} feeds/packages/utils
 
 # Add third-party software packages (The entire repository)
 # git clone https://github.com/libremesh/lime-packages.git package/lime-packages

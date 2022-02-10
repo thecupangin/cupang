@@ -3,7 +3,7 @@
 
 | SoC  | Device | [ Kernel Version ](https://github.com/ophub/kernel/tree/main/pub/stable) | CupangOs Firmware |
 | ---- | ---- | ---- | ---- |
-| s905x | [HG680P], [B860H] | 5.4.170 | CupangOs_k5.4.170.img |
+| s905x | [HG680P], [B860H] | 5.4.178_5.10.99_5.15.22_5.16.8 | CupangOs_k*.img |
 
 
 <h1 align="center" style="font-weight: bold">Firmware information</h1>

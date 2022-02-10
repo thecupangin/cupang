@@ -11,7 +11,6 @@
 
 # Add a kenzok78 feed source
 sed -i '$a src-git cupangOs-packages https://github.com/thecupangin/cupangOs-packages' feeds.conf.default
-# sed -i '$a src-git NueXini_Packages https://github.com/NueXini/NueXini_Packages.git' feeds.conf.default
 
 # other
 rm -rf package/lean/{samba4,luci-app-samba4,*docker*}

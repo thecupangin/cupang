@@ -25,7 +25,7 @@ rm -rf ./package/emortal/default-settings/files/openwrt_banner
 svn export https://github.com/thecupangin/cupang/trunk/amlogic-s9xxx/common-files/files/etc/banner package/emortal/default-settings/files/openwrt_banner
 
 # change timezone
-sed -i -e "s/CST-8/WIB-7/g" -e "s/Shanghai/Jakarta/g" package/emortal/default-settings/files/99-default-settings-chinese
+sed -i -e "s/CST-8/UTC+7/g" -e "s/Shanghai/Jakarta/g" package/emortal/default-settings/files/99-default-settings-chinese
 
 # change shell
 sed -i "s/\/bin\/ash/\/usr\/bin\/zsh/g" package/base-files/files/etc/passwd

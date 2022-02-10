@@ -327,7 +327,7 @@ EOF
     # Add cpustat
     DISTRIB_SOURCECODE="$(cat etc/openwrt_release | grep "DISTRIB_SOURCECODE=" | awk -F "'" '{print $2}')"
     cpustat_file=${configfiles_path}/patches/cpustat
-    if [[ -d "${cpustat_file}" && -x "bin/bash" && "${DISTRIB_SOURCECODE}" == "immortalwrt" ]]; then
+    if [[ -d "${cpustat_file}" && -x "bin/bash" && "${DISTRIB_SOURCECODE}" == "CupangOs" ]]; then
         cp -f ${cpustat_file}/cpustat usr/bin/cpustat && chmod +x usr/bin/cpustat >/dev/null 2>&1
         cp -f ${cpustat_file}/getcpu bin/getcpu && chmod +x bin/getcpu >/dev/null 2>&1
         cp -f ${cpustat_file}/30-sysinfo.sh etc/profile.d/30-sysinfo.sh && chmod +x etc/profile.d/30-sysinfo.sh >/dev/null 2>&1
@@ -451,7 +451,7 @@ make_image() {
     cd ${make_path}
     build_op=${1}
     #build_image_file="${out_path}/openwrt_${build_op}_k${kernel}_$(date +"%Y.%m.%d.%H%M").img"
-    build_image_file="${out_path}/ImmortalWrt-21.02-lynx-k${kernel}-$(date +"%Y.%m.%d.%H%M").img"
+    build_image_file="${out_path}/CupangOs-k${kernel}-$(date +"%Y.%m.%d.%H%M").img"
     rm -f ${build_image_file}
     sync
 

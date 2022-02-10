@@ -1,13 +1,12 @@
-## CupangOs Firmware instructions
+<div align="center">
+<h1 align="center" style="font-weight: bold">CupangOs Firmware instructions</h1>
 
 | SoC  | Device | [ Kernel Version ](https://github.com/ophub/kernel/tree/main/pub/stable) | CupangOs Firmware |
 | ---- | ---- | ---- | ---- |
 | s905x | [HG680P], [B860H] | 5.4.170 | CupangOs_k5.4.170.img |
-| s905x2 | [X96Max-4G], [X96Max-2G] | soon | CupangOs_k*.img |
-| s905x3 | [X96-Max+], [HK1-Box], [H96-Max-X3], [Ugoos-X3], [X96-Air], [A95XF3-Air] | soon | CupangOs_k*.img |
 
-<div align="center">
-## Firmware information
+
+<h1 align="center" style="font-weight: bold">Firmware information</h1>
 
 | Name | Value |
 | ---- | ---- |
@@ -16,9 +15,8 @@
 | Default password | root |
 | Default WIFI name | CupangOs |
 | Default WIFI password | none |
-</div>
 
-## Bypass gateway settings
+<h1 align="center" style="font-weight: bold">Bypass gateway settings</h1>
 
 If used as a bypass gateway, you can add custom firewall rules as needed (Network → Firewall → Custom Rules):
 
@@ -26,8 +24,8 @@ If used as a bypass gateway, you can add custom firewall rules as needed (Networ
 iptables -t nat -I POSTROUTING -o eth0 -j MASQUERADE        #If the interface is eth0.
 iptables -t nat -I POSTROUTING -o br-lan -j MASQUERADE      #If the interface is br-lan bridged.
 ```
-<div align="center">
-<h1 align="center">CupangOs by thecupangin</h1>
+
+<h1 align="center" style="font-weight: bold">CupangOs by thecupangin</h1>
 <img src="https://img.shields.io/github/issues/thecupangin/cupang?color=green">
 <img src="https://img.shields.io/github/stars/thecupangin/cupang?color=yellow">
 <img src="https://img.shields.io/github/forks/thecupangin/cupang?color=orange">

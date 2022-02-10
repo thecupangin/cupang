@@ -1,6 +1,6 @@
-## OpenWrt Firmware instructions
+## CupangOs Firmware instructions
 
-| SoC  | Device | [Optional kernel](https://github.com/ophub/kernel/tree/main/pub/stable) | OpenWrt Firmware |
+| SoC  | Device | [ Kernel Version ](https://github.com/ophub/kernel/tree/main/pub/stable) | CupangOs Firmware |
 | ---- | ---- | ---- | ---- |
 | s905x | [HG680P], [B860H] | 5.4.170 | CupangOs_k5.4.170.img |
 | s905x2 | [X96Max-4G], [X96Max-2G] | soon | CupangOs_k*.img |

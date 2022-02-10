@@ -6,6 +6,7 @@
 | s905x2 | [X96Max-4G], [X96Max-2G] | soon | CupangOs_k*.img |
 | s905x3 | [X96-Max+], [HK1-Box], [H96-Max-X3], [Ugoos-X3], [X96-Air], [A95XF3-Air] | soon | CupangOs_k*.img |
 
+<div align="center">
 ## Firmware information
 
 | Name | Value |
@@ -15,6 +16,7 @@
 | Default password | root |
 | Default WIFI name | CupangOs |
 | Default WIFI password | none |
+</div>
 
 ## Bypass gateway settings
 

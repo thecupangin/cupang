@@ -27,8 +27,8 @@ auto_kernel="true"
 #===== Do not modify the following parameter settings, End =======
 
 # Set firmware size ( BOOT_MB size >= 128, ROOT_MB size >= 512 )
-BOOT_MB=256
-ROOT_MB=960
+BOOT_MB=150
+ROOT_MB=650
 
 tag() {
     echo -e " [ \033[1;92m ${1} \033[0m ]"

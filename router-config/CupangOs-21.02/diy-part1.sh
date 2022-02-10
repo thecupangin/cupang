@@ -10,9 +10,9 @@
 # sed -i '$a src-git system https://github.com/riyuejz/system.git;main' feeds.conf.default
 
 # Add a kenzok78 feed source
-sed -i '$a src-git cupangOs-packages https://github.com/thecupangin/cupangOs-packages' feeds.conf.default
+sed -i '$a src-git cupangOs_packages https://github.com/thecupangin/cupangOs-packages' feeds.conf.default
 
 # other
-rm -rf package/lean/{samba4,luci-app-samba4,*docker*}
-rm -rf package/{samba4,luci-app-samba4,*docker*}
+#rm -rf package/lean/{samba4,luci-app-samba4,*docker*}
+#rm -rf package/{samba4,luci-app-samba4,*docker*}
 

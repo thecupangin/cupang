@@ -340,14 +340,8 @@ EOF
     # brcmfmac built-in wireless network card Driver
     echo "brcmfmac" >etc/modules.d/brcmfmac
     echo "brcmutil" >etc/modules.d/brcmutil
-    # USB Realtek RTL8188EU Wireless LAN Driver
-    echo "r8188eu" >etc/modules.d/rtl8188eu
-    # Realtek RTL8189FS Wireless LAN Driver
-    echo "8189fs" >etc/modules.d/8189fs
     # Realtek RTL8188FU Wireless LAN Driver
     echo "rtl8188fu" >etc/modules.d/rtl8188fu
-    # Realtek RTL8822CS Wireless LAN Driver
-    echo "88x2cs" >etc/modules.d/88x2cs
     # USB Ralink Wireless LAN Driver
     echo "rt2500usb" >etc/modules.d/rt2500-usb
     echo "rt2800usb" >etc/modules.d/rt2800-usb
@@ -361,6 +355,14 @@ EOF
     echo "panfrost" >etc/modules.d/panfrost
     # PWM Driver
     echo "pwm_meson" >etc/modules.d/pwm_meson
+    # Add drivers
+    [ -f etc/modules.d/8189fs ] || echo "8189fs" >etc/modules.d/8189fs
+    [ -f etc/modules.d/8189es ] || echo "8189es" >etc/modules.d/8189es
+    [ -f etc/modules.d/88X2cs ] || echo "88x2cs" >etc/modules.d/88x2cs
+    [ -f etc/modules.d/8188eu ] || echo "8188eu rtw_power_mgnt=0 rtw_enusbss=0" >etc/modules.d/8188eu
+    [ -f etc/modules.d/8192cu ] || echo "8192cu rtw_power_mgnt=0 rtw_enusbss=0" >etc/modules.d/8192cu
+    [ -f etc/modules.d/8192eu ] || echo "8192eu rtw_power_mgnt=0 rtw_enusbss=0" >etc/modules.d/8192eu
+    [ -f etc/modules.d/88XXau ] || echo "88XXau rtw_power_mgnt=0 rtw_enusbss=0" >etc/modules.d/88XXau
 
     # Add cpustat
     DISTRIB_SOURCECODE="$(cat etc/openwrt_release | grep "DISTRIB_SOURCECODE=" | awk -F "'" '{print $2}')"
@@ -375,7 +377,7 @@ EOF
 
     # Modify the cpu mode to schedutil
     if [[ -f "etc/config/cpufreq" ]]; then
-        sed -i "s/ondemand/schedutil/" etc/config/cpufreq
+        sed -i "s/ondemand/performance/" etc/config/cpufreq
     fi
 
     # Add balethirq
@@ -483,7 +485,7 @@ make_image() {
     process_msg " (4/6) make openwrt image."
 
     cd ${make_path}
-    build_image_file="${out_path}/openwrt_${soc}_k${kernel}_$(date +"%Y.%m.%d.%H%M").img"
+    build_image_file="${out_path}/CupangOs_${soc}_k${kernel}_$(date +"%Y.%m.%d.%H%M").img"
     rm -f ${build_image_file}
     sync
 

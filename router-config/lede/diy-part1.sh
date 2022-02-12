@@ -16,5 +16,5 @@ sed -i '$a src-git cupangOs_packages https://github.com/thecupangin/cupangOs-pac
 
 
 # other
-rm -rf package/{samba4,luci-app-samba4,*docker*}
+#rm -rf package/{samba4,luci-app-samba4,*docker*}
 

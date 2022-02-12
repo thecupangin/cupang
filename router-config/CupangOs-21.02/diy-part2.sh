@@ -69,7 +69,7 @@ cp $GITHUB_WORKSPACE/amlogic-s9xxx/common-files/patches/zsh/example.zsh ./.oh-my
 popd
 
 # add theme luci-theme-neobird
-# git clone --dept 1 https://github.com/thinktip/luci-theme-neobird.git package/luci-theme-neobird
+git clone --dept 1 https://github.com/thinktip/luci-theme-neobird.git package/luci-theme-neobird
 
 # add lrdrdn/my-opkg-repo
 #sed -i 's/option check_signature/# option check_signature/g' /etc/opkg.conf

@@ -11,7 +11,7 @@
 
 # Clone Lean's feeds
 sed -i '$a src-git lean_packages https://github.com/coolsnowwolf/packages' feeds.conf.default
-sed -i '$a src-git lean_luci https://github.com/coolsnowwolf/luci customfeeds/luci' feeds.conf.default
+sed -i '$a src-git lean_luci https://github.com/coolsnowwolf/luci' feeds.conf.default
 
 # Add a cupangOs-packages feed source
 #sed -i '$a src-git small https://github.com/kenzok78/small-package' feeds.conf.default

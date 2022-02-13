@@ -10,8 +10,12 @@
 # sed -i 's/#src-git helloworld/src-git helloworld/g' ./feeds.conf.default
 # sed -i 's/\"#src-git\"/\"src-git\"/g' feeds.conf.default
 
+# Clone Lean's feeds
+sed -i '$a src-git lean_packages https://github.com/coolsnowwolf/packages' feeds.conf.default
+#sed -i '$a src-git lean_luci https://github.com/coolsnowwolf/luci customfeeds/luci' feeds.conf.default
+
 # Add a feed source
-# sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
+#sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
 sed -i '$a src-git cupangOs_packages https://github.com/thecupangin/cupangOs-packages' feeds.conf.default
 
 

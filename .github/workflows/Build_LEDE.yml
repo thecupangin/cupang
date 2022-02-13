@@ -26,7 +26,7 @@ env:
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: false
-  UPLOAD_WETRANSFER: true
+  UPLOAD_WETRANSFER: false
   UPLOAD_RELEASE: true
   TZ: Asia/Jakarta
   
@@ -38,7 +38,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@master
 
-    - name: 初始化环境
+    - name: Initialize the environment
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
@@ -70,7 +70,7 @@ jobs:
         sudo mkdir -p /workdir
         sudo chown $USER:$GROUPS /workdir
         
-    - name: 下载Lede源码
+    - name: Download Lede source code
       working-directory: /workdir
       run: |
         df -hT $PWD
@@ -102,19 +102,19 @@ jobs:
         ./scripts/feeds install -a
         ./scripts/feeds install -a
      
-    - name: 更换banner
+    - name: change banner
       run: |
         cd openwrt/package/base-files/files/etc
         sudo rm banner
-        wget https://raw.githubusercontent.com/lunseil/AutoBuild-LEDE/master/banner   
+        wget https://raw.githubusercontent.com/thecupangin/cupang/lede/banner   
 
-    - name: 自定义config
+    - name: custom config
       run: |
         [ -e files ] && mv files openwrt/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x $DIY_P1_SH
             
-    - name: SSH连接
+    - name: SSH connection
       uses: P3TERX/ssh2actions@v1.0.0
       if: (github.event.inputs.ssh == 'true' && github.event.inputs.ssh  != 'false') || contains(github.event.action, 'ssh')
       env:
@@ -130,7 +130,7 @@ jobs:
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
 
-    - name: 正式编译固件
+    - name: Officially compiled firmware
       id: compile
       run: |
         cd openwrt
@@ -152,7 +152,7 @@ jobs:
     #    name: OpenWrt_bin${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
     #    path: openwrt/bin
 
-    - name: 整理文件
+    - name: Organize files
       id: organize
       if: env.UPLOAD_FIRMWARE == 'true' && !cancelled()
       run: |
@@ -170,7 +170,7 @@ jobs:
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "::set-output name=status::success"
         
-    - name: 打包上传
+    - name: Package upload
       uses: actions/upload-artifact@main
       if: steps.organize.outputs.status == 'success' && !cancelled()
       with:

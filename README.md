@@ -10,7 +10,7 @@ Build OpenWrt Firmware Lean OpenWrt using GitHub Actions,
 Lean：https://github.com/coolsnowwolf/lede
 P3TERX：https://github.com/P3TERX/Actions-OpenWrt/
 KFERMercer：https://github.com/KFERMercer/OpenWrt-CI
-P3TERX：https://github.com/esirplayground/AutoBuild-OpenWrt
+esirplayground:https://github.com/esirplayground/AutoBuild-OpenWrt
 
 
 The following is the display after the project is automatically compiled:：

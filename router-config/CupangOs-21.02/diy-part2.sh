@@ -9,7 +9,7 @@
 # ------------------------------- Main source started -------------------------------
 #
 # Modify default theme（FROM uci-theme-bootstrap CHANGE TO luci-theme-tano）
-sed -i 's/luci-theme-bootstrap/luci-theme-tano/g' feeds/luci/collections/luci/Makefile
+sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
 
 # change password to "root"
 sed -i "s/root::0:0:99999:7:::/root:$1$Px5lfQdL$suWhpQngCSnh9DlbQsC0N/:18936:0:99999:7:::/g" package/base-files/files/etc/shadow
@@ -69,7 +69,7 @@ cp $GITHUB_WORKSPACE/amlogic-s9xxx/common-files/patches/zsh/example.zsh ./.oh-my
 popd
 
 # add theme luci-theme-neobird
-# git clone --dept 1 https://github.com/thinktip/luci-theme-neobird.git package/luci-theme-neobird
+git clone --dept 1 https://github.com/thinktip/luci-theme-neobird.git package/luci-theme-neobird
 
 # add lrdrdn/my-opkg-repo
 #sed -i 's/option check_signature/# option check_signature/g' /etc/opkg.conf

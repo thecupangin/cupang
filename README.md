@@ -1,35 +1,21 @@
-<div align="center">
-<h1 align="center" style="font-weight: bold">CupangOs Firmware instructions</h1>
+# AutoBuild-Openwrt-LEDE
 
-| SoC  | Device | [ Kernel Version ](https://github.com/ophub/kernel/tree/main/pub/stable) | CupangOs Firmware |
-| ---- | ---- | ---- | ---- |
-| s905x | [HG680P], [B860H] | 5.4.178_5.10.99_5.15.22_5.16.8 | CupangOs_k*.img |
+[![LICENSE](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat&logo=github&label=LICENSE)](https://github.com/lunseil/AutoBuild-LEDE/blob/main/LICENSE)
+![GitHub Stars](https://img.shields.io/github/stars/lunseil/AutoBuild-LEDE.svg?style=flat&logo=appveyor&label=Stars&logo=github)
+![GitHub Forks](https://img.shields.io/github/forks/lunseil/AutoBuild-LEDE.svg?style=flat&logo=appveyor&label=Forks&logo=github)
+![GitHub last commit](https://img.shields.io/github/last-commit/lunseil/AutoBuild-LEDE?label=Latest%20Commit&logo=github)
+
+Build OpenWrt Firmware Lean OpenWrt using GitHub Actions,
+
+Lean：https://github.com/coolsnowwolf/lede
+P3TERX：https://github.com/P3TERX/Actions-OpenWrt/
+KFERMercer：https://github.com/KFERMercer/OpenWrt-CI
+P3TERX：https://github.com/esirplayground/AutoBuild-OpenWrt
 
 
-<h1 align="center" style="font-weight: bold">Firmware information</h1>
-
-| Name | Value |
-| ---- | ---- |
-| Default IP | 192.168.1.1 |
-| Default username | root |
-| Default password | root |
-| Default WIFI name | CupangOs |
-| Default WIFI password | none |
-
-<h1 align="center" style="font-weight: bold">Bypass gateway settings</h1>
-
-If used as a bypass gateway, you can add custom firewall rules as needed (Network → Firewall → Custom Rules):
-
-```yaml
-iptables -t nat -I POSTROUTING -o eth0 -j MASQUERADE        #If the interface is eth0.
-iptables -t nat -I POSTROUTING -o br-lan -j MASQUERADE      #If the interface is br-lan bridged.
-```
-
-<h1 align="center" style="font-weight: bold">CupangOs by thecupangin</h1>
-<img src="https://img.shields.io/github/issues/thecupangin/cupang?color=green">
-<img src="https://img.shields.io/github/stars/thecupangin/cupang?color=yellow">
-<img src="https://img.shields.io/github/forks/thecupangin/cupang?color=orange">
-<img src="https://img.shields.io/github/license/thecupangin/cupang?color=ff69b4">
-<img src="https://img.shields.io/github/languages/code-size/thecupangin/cupang?color=blueviolet">
-</div>
-
+The following is the display after the project is automatically compiled:：
+![Web Capture_8-2-2022_112318_10 10 10 1](https://user-images.githubusercontent.com/19170650/152912488-38b54e1c-15d5-47b1-a4a3-0eab2c5b0a16.jpeg)
+![Web Capture_8-2-2022_112415_10 10 10 1](https://user-images.githubusercontent.com/19170650/152912502-79a4a92c-907b-4a61-ae97-46cf5517ed76.jpeg)
+![Web Capture_8-2-2022_112446_10 10 10 1](https://user-images.githubusercontent.com/19170650/152912508-888ea7a1-0bb6-4482-8d97-6d03b441d777.jpeg)
+![Web Capture_8-2-2022_112613_10 10 10 1](https://user-images.githubusercontent.com/19170650/152912513-09e60bf4-4255-492a-8f6d-11a9e4052e95.jpeg)
+![Web Capture_8-2-2022_112626_10 10 10 1](https://user-images.githubusercontent.com/19170650/152912522-b9c63a49-bb11-43c6-b973-5217b02b5f70.jpeg)
